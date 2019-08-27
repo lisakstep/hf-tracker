@@ -7,6 +7,14 @@
 Enter your weight here, and we will alert you if your weight has increased more than 2 1/2 
 pounds since the previous day, or more than 5 pounds in the past week.</p>
 
+<form method="post" action="/weights">
+@csrf
+    <input type="number" step=".1" name="weight" placeholder="000.0">
+
+    <input type="submit" name="submit">
+
+</form>
+
 <ul>
     @foreach($weights as $weight)
 
