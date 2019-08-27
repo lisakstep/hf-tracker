@@ -41,6 +41,7 @@
             }
 
             .content {
+                margin-top: 5rem;
                 text-align: center;
             }
 
@@ -67,6 +68,9 @@
     <div class="content">
         <div class="title m-b-md">
             Weight Tracker
+        </div>
+        <div>
+        Today's weight
         </div>
     </div>
     </body>
