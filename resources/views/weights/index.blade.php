@@ -18,15 +18,22 @@ pounds since the previous day, or more than 5 pounds in the past week.</p>
 
 <div class="container">
     <div class="row">
-        <div class="col data-display result {{ ($change_since_yesterday > 2.5) ? 'danger-border' : 'success-border'}}">
+        <div class="col data-display result {{ ($change_since_yesterday >= 2.5) ? 'danger-border' : 'success-border'}}">
             <div class="row">
                 <div class="text-in-row">
                     One Day Ago
                 </div>
             </div>
             <div class="row">
-                <div class="text-in-row result-text {{ ($change_since_yesterday > 2.5) ? 'text-danger' : 'text-success'}}">
+                <div class="text-in-row result-text {{ ($change_since_yesterday >= 2.5) ? 'text-danger' : 'text-success'}}">
+                    @if ( $change_since_yesterday > 0 )
+                    +
+                    @endif
+                    @if ( $change_since_yesterday == 0 )
+                    no change
+                    @else
                     {{ $change_since_yesterday }}
+                    @endif
                 </div>
             </div>
             <div class="row">
@@ -35,15 +42,22 @@ pounds since the previous day, or more than 5 pounds in the past week.</p>
                 </div>
             </div>
         </div>
-        <div class="col data-display result {{ ($change_since_last_week > 2.5) ? 'danger-border' : 'success-border'}}">
+        <div class="col data-display result {{ ($change_since_last_week >= 5) ? 'danger-border' : 'success-border'}}">
             <div class="row">
                 <div class="text-in-row">
                     One Week Ago
                 </div>
             </div>
             <div class="row">
-                <div class="text-in-row result-text {{ ($change_since_last_week > 5) ? 'text-danger' : 'text-success'}}">
+                <div class="text-in-row result-text {{ ($change_since_last_week >= 5) ? 'text-danger' : 'text-success'}}">
+                    @if ( $change_since_last_week > 0 )
+                    +
+                    @endif
+                    @if ( $change_since_last_week == 0 )
+                    no change
+                    @else
                     {{ $change_since_last_week }}
+                    @endif
                 </div>
             </div>
             <div class="row">
