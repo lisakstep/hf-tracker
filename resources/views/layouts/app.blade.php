@@ -24,45 +24,29 @@
                 -webkit-appearance: none;
                 margin: 0;
             }
-            .today-entry {
+            .data-display {
                 font-size: 2rem;
                 font-weight: 500;
                 text-align: center;
                 text-transform: uppercase;
             }
-            .full-height {
-                height: 100vh;
+            .result {
+                border-style: solid;
+                margin: 0 2rem;
             }
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-            .position-ref {
-                position: relative;
-            }
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-            .content {
+            .text-in-row {
                 text-align: center;
+                width: 100%;
             }
-            .title {
-                font-size: 84px;
+            .footnote {
+                font-size: 1rem;
+                font-weight: 200;
             }
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
+            .danger-border {
+                border-color: red;
             }
-            .m-b-md {
-                margin-bottom: 30px;
+            .success-border {
+                border-color: green;
             }
         </style>
     </head>

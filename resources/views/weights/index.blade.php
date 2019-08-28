@@ -7,10 +7,10 @@
 Enter your weight here, and we will alert you if your weight has increased more than 2 1/2 
 pounds since the previous day, or more than 5 pounds in the past week.</p>
 
-<div class="today-entry">
+<div class="data-display">
     Today
     <form method="post" action="/weights">
-    @csrf
+        @csrf
         <input type="number" step=".1" name="weight" placeholder="{{ $today_weight }}">
 
     </form>
@@ -18,18 +18,40 @@ pounds since the previous day, or more than 5 pounds in the past week.</p>
 
 <div class="container">
     <div class="row">
-        <div class="col">
-        first thing
+        <div class="col data-display result {{ ($change_since_yesterday > 2.5) ? 'danger-border' : 'success-border'}}">
+            <div class="row">
+                <div class="text-in-row">
+                    One Day Ago
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-in-row {{ ($change_since_yesterday > 2.5) ? 'text-danger' : 'text-success'}}">
+                    {{ $change_since_yesterday }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-in-row footnote">
+                    (was {{ $yesterday_weight }})
+                </div>
+            </div>
         </div>
-        <div class="col">
-        second thing
+        <div class="col data-display result {{ ($change_since_yesterday > 2.5) ? 'danger-border' : 'success-border'}}">
+            <div class="row">
+                <div class="text-in-row">
+                    One Week Ago
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-in-row {{ ($change_since_yesterday > 5) ? 'text-danger' : 'text-success'}}">
+                    {{ $change_since_last_week }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-in-row footnote">
+                    (was {{ $last_week_weight }})
+                </div>
+            </div>
         </div>
     </div>
 </div>
-Your weight today: {{ $today_weight }}
-Your weight yesterday: {{ $yesterday_weight }}
-Your weight a week ago: {{ $last_week_weight }}
-
-Change since yesterday: {{ $change_since_yesterday }}
-Change since a week ago: {{ $change_since_last_week }}
 @endsection
