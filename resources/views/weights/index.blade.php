@@ -3,7 +3,7 @@
 @section('welcome')
 
 <h1>Welcome to Weight Tracker</h1>
-<p>Weigh yourself once each day, wearing the same clothing and at the same time of day. 
+<p>Weigh yourself at the same time each day, wearing the same clothing.
 Enter your weight here, and we will alert you if your weight has increased more than 2 1/2 
 pounds since the previous day, or more than 5 pounds in the past week.</p>
 
