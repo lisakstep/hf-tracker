@@ -34,6 +34,9 @@
                 border-style: solid;
                 margin: 0 2rem;
             }
+            .result-text {
+                font-size: 4rem;
+            }
             .text-in-row {
                 text-align: center;
                 width: 100%;
@@ -43,9 +46,11 @@
                 font-weight: 200;
             }
             .danger-border {
+                background-color: rgba(255, 182, 193, .5);
                 border-color: red;
             }
             .success-border {
+                background-color: rgba(144, 238, 144, .5);
                 border-color: green;
             }
         </style>

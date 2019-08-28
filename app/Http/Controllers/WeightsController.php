@@ -15,7 +15,6 @@ class WeightsController extends Controller
      */
     public function index()
     {
-        //
         $weights = Weight::all();
         $array_size = sizeof($weights);
         
@@ -23,8 +22,8 @@ class WeightsController extends Controller
         $yesterday_weight = $weights[$array_size-2]->weight;
         $last_week_weight = $weights[$array_size-8]->weight;
 
-        $change_since_yesterday = $today_weight - $yesterday_weight;
-        $change_since_last_week = $today_weight - $last_week_weight;
+        $change_since_yesterday = number_format($today_weight - $yesterday_weight, 1);
+        $change_since_last_week = number_format($today_weight - $last_week_weight, 1);
 
         return view('weights.index', 
                     compact('weights'), 
@@ -43,7 +42,7 @@ class WeightsController extends Controller
      */
     public function create()
     {
-        return view('weights.create');
+       // 
     }
 
     /**
@@ -111,14 +110,8 @@ class WeightsController extends Controller
 
     public function contact(){
 
-        return view('contact');
+        //return view('contact');
     
     }
 
-    public function show_weight($number){
-    
-        // return view('weight')->with('number', $number);
-        return view('weight', compact('number'));
-    
-    }
 }

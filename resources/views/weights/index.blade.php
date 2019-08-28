@@ -25,7 +25,7 @@ pounds since the previous day, or more than 5 pounds in the past week.</p>
                 </div>
             </div>
             <div class="row">
-                <div class="text-in-row {{ ($change_since_yesterday > 2.5) ? 'text-danger' : 'text-success'}}">
+                <div class="text-in-row result-text {{ ($change_since_yesterday > 2.5) ? 'text-danger' : 'text-success'}}">
                     {{ $change_since_yesterday }}
                 </div>
             </div>
@@ -35,14 +35,14 @@ pounds since the previous day, or more than 5 pounds in the past week.</p>
                 </div>
             </div>
         </div>
-        <div class="col data-display result {{ ($change_since_yesterday > 2.5) ? 'danger-border' : 'success-border'}}">
+        <div class="col data-display result {{ ($change_since_last_week > 2.5) ? 'danger-border' : 'success-border'}}">
             <div class="row">
                 <div class="text-in-row">
                     One Week Ago
                 </div>
             </div>
             <div class="row">
-                <div class="text-in-row {{ ($change_since_yesterday > 5) ? 'text-danger' : 'text-success'}}">
+                <div class="text-in-row result-text {{ ($change_since_last_week > 5) ? 'text-danger' : 'text-success'}}">
                     {{ $change_since_last_week }}
                 </div>
             </div>
