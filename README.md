@@ -23,8 +23,14 @@ dabbled with Ruby on Rails when I was first learning. I enjoy PHP and wanted to 
 what I could do with it.
 
 ## Still TODO
+- Add testing
+- Expand data validation and error feedback messaging
+- Enforce entry of only one weight per day
+- Allow updating of the current day weight value
 
 ## Possible extensions
 - Accept weight in kilograms and use appropriate threshholds
 - Display a graph of weight over time
 - Cache data on retrieval
+- Implement user login
+- Allow multiple users
