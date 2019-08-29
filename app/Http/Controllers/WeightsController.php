@@ -15,18 +15,15 @@ class WeightsController extends Controller
      */
     public function index()
     {
-        $weights = Weight::all();
-        $array_size = sizeof($weights);
-        
-        $today_weight     = $weights[$array_size-1]->weight;
-        $yesterday_weight = $weights[$array_size-2]->weight;
-        $last_week_weight = $weights[$array_size-8]->weight;
+        // Get the necessary data from the Weight model, then return it to the view
+        $today_weight = Weight::find(1)->latest;
+        $yesterday_weight = Weight::find(1)->yesterday;
+        $last_week_weight = Weight::find(1)->last_week;
 
-        $change_since_yesterday = number_format($today_weight - $yesterday_weight, 1);
-        $change_since_last_week = number_format($today_weight - $last_week_weight, 1);
+        $change_since_yesterday = number_format(Weight::find(1)->day_difference, 1);
+        $change_since_last_week = number_format(Weight::find(1)->week_difference, 1);
 
         return view('weights.index', 
-                    compact('weights'), 
                     ['today_weight'          => $today_weight, 
                     'yesterday_weight'       => $yesterday_weight, 
                     'last_week_weight'       => $last_week_weight, 
